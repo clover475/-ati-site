@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { ParticleHero } from "@/components/particle-hero"
 import { ChevronDown } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
@@ -83,7 +84,6 @@ const technologyServices = [
   {
     id: "cloud",
     name: { EN: "Cloud", CN: "云计算" },
-    core: true,
     description: {
       EN: "Accelerate your cloud journey with scalable infrastructure and modern cloud-native solutions.",
       CN: "通过可扩展的基础设施和现代云原生解决方案加速您的云之旅。",
@@ -174,18 +174,19 @@ export default function SolutionsPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <main className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        {/* Page Title */}
-        <div className="mb-20">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">{t({ EN: "Solutions", CN: "解决方案" })}</h1>
-          <p className="text-xl text-gray-600">
-            {t({
-              EN: "Comprehensive consulting and technology services for your business",
-              CN: "为您的企业提供全面的咨询和技术服务",
-            })}
-          </p>
-        </div>
+      <ParticleHero
+        title={{ EN: "Consulting & Technology", CN: "咨询与技术" }}
+        subtitle={{
+          EN: "Strategic consulting and technology solutions",
+          CN: "战略咨询和技术解决方案",
+        }}
+        bgColor="#0d47a1"
+        particleColor="rgba(255, 255, 255, 0.7)"
+        lineColor="rgba(255, 255, 255, 0.25)"
+        textColor="white"
+      />
 
+      <main className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
         {/* Consulting Services Section */}
         <section className="mb-24">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">{t({ EN: "Consulting Services", CN: "咨询服务" })}</h2>
@@ -241,14 +242,7 @@ export default function SolutionsPage() {
                   onClick={() => toggleTechnology(service.id)}
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl font-semibold text-gray-900">{service.name[language]}</span>
-                    {service.core && (
-                      <span className="text-xs font-semibold text-white bg-[#0066CC] px-3 py-1 rounded-full">
-                        {t({ EN: "Core", CN: "核心" })}
-                      </span>
-                    )}
-                  </div>
+                  <span className="text-xl font-semibold text-gray-900">{service.name[language]}</span>
                   <ChevronDown
                     className={`w-6 h-6 text-[#0066CC] transition-transform ${
                       expandedTechnology === service.id ? "rotate-180" : ""

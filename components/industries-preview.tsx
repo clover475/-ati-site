@@ -10,7 +10,7 @@ const industries = [
   { name: { EN: "High Tech", CN: "高科技" }, icon: "💻" },
   { name: { EN: "Life Sciences", CN: "生命科学" }, icon: "🧬" },
   { name: { EN: "Healthcare", CN: "医疗健康" }, icon: "🏥" },
-  { name: { EN: "Financial Industry", CN: "金融业" }, icon: "🏦" },
+  { name: { EN: "Financial Services", CN: "金融服务" }, icon: "🏦" },
   { name: { EN: "Energy & Chemicals", CN: "能源化工" }, icon: "⚡" },
   { name: { EN: "Aerospace and Defense", CN: "航空航天与国防" }, icon: "✈️" },
   { name: { EN: "Retail & Consumer Goods", CN: "零售与消费品" }, icon: "🛒" },

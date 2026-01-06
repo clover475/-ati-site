@@ -5,6 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { ParticleHero } from "@/components/particle-hero"
 import { Building2, Cpu, Microscope, Heart, Landmark, Zap, Plane, ShoppingBag, X } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
@@ -87,11 +88,11 @@ const industries: Industry[] = [
   },
   {
     id: "financial",
-    name: { EN: "Financial Industry", CN: "金融业" },
+    name: { EN: "Financial Services", CN: "金融服务" },
     icon: <Landmark className="w-12 h-12 text-[#0066CC]" />,
     description: {
-      EN: "Secure and innovative solutions for financial services",
-      CN: "为金融服务提供安全创新的解决方案",
+      EN: "Secure digital transformation for banking and financial institutions",
+      CN: "为银行和金融机构提供安全的数字化转型",
     },
     overview: {
       EN: "We enable financial institutions to modernize operations, enhance security, and deliver superior customer experiences in an increasingly digital landscape.",
@@ -166,17 +167,16 @@ export default function IndustriesPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <main className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        {/* Page Title */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {t({ EN: "Industries We Serve", CN: "我们服务的行业" })}
-          </h1>
-          <p className="text-lg text-gray-600">
-            {t({ EN: "Delivering specialized expertise across multiple sectors", CN: "为多个行业提供专业知识" })}
-          </p>
-        </div>
+      <ParticleHero
+        title={{ EN: "Industries", CN: "行业" }}
+        subtitle={{ EN: "Expertise across key sectors", CN: "跨关键行业的专业知识" }}
+        bgColor="#1a1a2e"
+        particleColor="rgba(200, 150, 255, 0.5)"
+        lineColor="rgba(200, 150, 255, 0.3)"
+        textColor="white"
+      />
 
+      <main className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
         {/* Industries Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((industry) => (

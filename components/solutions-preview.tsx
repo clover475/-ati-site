@@ -27,7 +27,9 @@ export function SolutionsPreview() {
     <section id="solutions" className="bg-white py-24 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">{t({ EN: "Solutions", CN: "解决方案" })}</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            {t({ EN: "Consulting and Technology", CN: "咨询与技术" })}
+          </h2>
           <p className="text-lg text-gray-600">
             {t({ EN: "Comprehensive consulting and technology services", CN: "全面的咨询和技术服务" })}
           </p>
@@ -43,7 +45,7 @@ export function SolutionsPreview() {
               {consultingServices.map((service) => (
                 <li key={service.EN}>
                   <Link
-                    href="/solutions"
+                    href="/consulting-technology"
                     className="flex items-start gap-3 hover:text-[#0066CC] transition-colors cursor-pointer group"
                   >
                     <ArrowRight className="w-5 h-5 text-[#0066CC] flex-shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
@@ -63,7 +65,7 @@ export function SolutionsPreview() {
               {technologyServices.map((service) => (
                 <li key={service.EN}>
                   <Link
-                    href="/solutions"
+                    href="/consulting-technology"
                     className="flex items-start gap-3 hover:text-[#0066CC] transition-colors cursor-pointer group"
                   >
                     <ArrowRight className="w-5 h-5 text-[#0066CC] flex-shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
@@ -77,7 +79,7 @@ export function SolutionsPreview() {
 
         <div className="text-center">
           <Link
-            href="/solutions"
+            href="/consulting-technology"
             className="inline-flex items-center gap-2 text-[#0066CC] font-medium hover:gap-3 transition-all"
           >
             {t({ EN: "Learn More", CN: "了解更多" })}

@@ -1,52 +1,106 @@
 "use client"
 
+import Link from "next/link"
 import { useLanguage } from "@/contexts/language-context"
+import { useState } from "react"
 
 export function Footer() {
   const { t } = useLanguage()
+  const [showWeChatQR, setShowWeChatQR] = useState(false)
 
   return (
-    <footer id="contact" className="bg-gray-50 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
-          {/* Company Info */}
+    <footer className="bg-[#334155] text-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+          {/* Left Column - Company Info */}
           <div>
-            <h3 className="text-2xl font-bold text-[#0066CC] mb-4">ATI</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="text-2xl font-bold mb-2">
+              <span className="text-white">AT</span>
+              <span className="text-[#5b9bd5]">&</span>
+              <span className="text-white">I</span>
+            </h3>
+            <p className="text-sm text-gray-300">
               {t({
-                EN: "Atitans International - Your trusted partner for digital transformation",
-                CN: "艾提坦国际 - 您值得信赖的数字化转型合作伙伴",
+                EN: "Your trusted partner for digital transformation",
+                CN: "您值得信赖的数字化转型合作伙伴",
               })}
             </p>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-4">{t({ EN: "Contact Us", CN: "联系我们" })}</h4>
-            <div className="space-y-3 text-gray-600">
-              <div>
-                <p className="font-medium text-gray-900">{t({ EN: "Hong Kong", CN: "香港" })}</p>
-                <p>+852 6760 1338</p>
+          {/* Right Column - Navigation and Contact */}
+          <div className="space-y-4">
+            <nav className="text-sm">
+              <Link href="/" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">
+                {t({ EN: "Home", CN: "首页" })}
+              </Link>
+              <span className="mx-2 text-gray-500">·</span>
+              <Link href="/industries" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">
+                {t({ EN: "Industries", CN: "行业" })}
+              </Link>
+              <span className="mx-2 text-gray-500">·</span>
+              <Link
+                href="/consulting-technology"
+                className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+              >
+                {t({ EN: "Consulting & Technology", CN: "咨询与技术" })}
+              </Link>
+              <span className="mx-2 text-gray-500">·</span>
+              <Link
+                href="/enterprise-ai"
+                className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+              >
+                {t({ EN: "AI Agent", CN: "AI智能体" })}
+              </Link>
+              <span className="mx-2 text-gray-500">·</span>
+              <Link href="/about" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">
+                {t({ EN: "About Us", CN: "关于我们" })}
+              </Link>
+              <span className="mx-2 text-gray-500">·</span>
+              <Link href="/contact" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">
+                {t({ EN: "Contact Us", CN: "联系我们" })}
+              </Link>
+            </nav>
+
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300">
+              <div className="flex items-center gap-1.5">
+                <span>📞</span>
+                <span>+86 188 1163 3601</span>
               </div>
-              <div>
-                <p className="font-medium text-gray-900">{t({ EN: "China", CN: "中国" })}</p>
-                <p>+86 188 1163 3601</p>
+              <span className="text-gray-500">·</span>
+              <div className="flex items-center gap-1.5">
+                <span>✉️</span>
+                <a href="mailto:ericguo@atitans.com" className="hover:text-white transition-colors">
+                  ericguo@atitans.com
+                </a>
               </div>
-              <div>
-                <p className="font-medium text-gray-900">{t({ EN: "Email", CN: "邮箱" })}</p>
-                <p>info@atitans.com</p>
-              </div>
-              <div>
-                <p className="font-medium text-gray-900">{t({ EN: "WeChat", CN: "微信" })}</p>
-                <p>{t({ EN: "Scan QR code to connect", CN: "扫描二维码添加" })}</p>
+              <span className="text-gray-500">·</span>
+              <div
+                className="relative flex items-center gap-1.5 cursor-pointer"
+                onMouseEnter={() => setShowWeChatQR(true)}
+                onMouseLeave={() => setShowWeChatQR(false)}
+              >
+                <span>💬</span>
+                <span className="hover:text-white transition-colors">WeChat</span>
+                {showWeChatQR && (
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-white rounded-xl shadow-xl z-50 w-[220px] p-5">
+                    <img
+                      src="/images/image.png"
+                      alt="WeChat QR Code"
+                      className="block"
+                      width={180}
+                      height={180}
+                      style={{ width: "180px", height: "180px" }}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-gray-200 text-center">
-          <p className="text-sm text-gray-500">
+        <div className="mt-6 pt-6 border-t border-gray-600 text-center">
+          <p className="text-xs text-gray-400">
             © {new Date().getFullYear()}{" "}
             {t({ EN: "Atitans International. All rights reserved.", CN: "艾提坦国际。保留所有权利。" })}
           </p>
