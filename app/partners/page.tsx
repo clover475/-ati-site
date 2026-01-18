@@ -170,13 +170,17 @@ export default function PartnersPage() {
                         key={logo.id}
                         className="group relative bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all duration-300 hover:-translate-y-1"
                       >
-                        <div className="aspect-[3/2] flex items-center justify-center bg-white rounded-lg">
+                        <div className="aspect-[3/2] flex items-center justify-center bg-white rounded-lg overflow-hidden">
                           <img
                             src={logo.src}
                             alt={`Customer ${logo.id}`}
-                            className="max-w-full max-h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-300"
+                            className="w-full h-full object-contain p-2"
                             style={{ backgroundColor: 'white' }}
                             loading="lazy"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                            }}
                           />
                         </div>
                       </div>

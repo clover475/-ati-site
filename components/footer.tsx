@@ -68,6 +68,11 @@ export function Footer() {
               </div>
               <span className="text-gray-500">·</span>
               <div className="flex items-center gap-1.5">
+                <span>📞</span>
+                <span>+852 6760 1338</span>
+              </div>
+              <span className="text-gray-500">·</span>
+              <div className="flex items-center gap-1.5">
                 <span>✉️</span>
                 <a href="mailto:ericguo@atitans.com" className="hover:text-white transition-colors">
                   ericguo@atitans.com
