@@ -78,8 +78,8 @@ export default function ContactPage() {
       {/* Contact Information Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-            <div className="flex items-center gap-4 bg-white rounded-xl p-6 shadow-sm">
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center flex-wrap">
+            <div className="flex items-center gap-4 bg-white rounded-xl px-8 py-6 shadow-sm min-w-[280px]">
               <Phone className="w-8 h-8 text-[#0066CC] flex-shrink-0" />
               <div>
                 <p className="text-sm text-gray-500 mb-1">{t({ EN: "Mainland China", CN: "中国大陆" })}</p>
@@ -92,7 +92,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-white rounded-xl p-6 shadow-sm">
+            <div className="flex items-center gap-4 bg-white rounded-xl px-8 py-6 shadow-sm min-w-[250px]">
               <Phone className="w-8 h-8 text-[#0066CC] flex-shrink-0" />
               <div>
                 <p className="text-sm text-gray-500 mb-1">{t({ EN: "Hong Kong", CN: "中国香港" })}</p>
