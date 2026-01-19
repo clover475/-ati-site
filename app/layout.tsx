@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   description:
     "Global provider of management consulting, industry solutions, and information technology services. Your trusted partner for digital transformation.",
   icons: {
-    icon: "/icon-light-32x32.png",
-    apple: "/apple-icon.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
 }
 
