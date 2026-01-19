@@ -77,41 +77,41 @@ export default function ContactPage() {
 
       {/* Contact Information Section */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center flex-wrap">
-            <div className="flex items-center gap-4 bg-white rounded-xl px-8 py-6 shadow-sm min-w-[280px]">
-              <Phone className="w-8 h-8 text-[#0066CC] flex-shrink-0" />
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col-reverse md:flex-row gap-5 justify-center items-center flex-wrap">
+            <div className="flex items-center gap-3 bg-white rounded-xl px-6 py-5 shadow-sm">
+              <Phone className="w-7 h-7 text-[#0066CC] flex-shrink-0" />
               <div>
-                <p className="text-sm text-gray-500 mb-1">{t({ EN: "Mainland China", CN: "中国大陆" })}</p>
+                <p className="text-xs text-gray-500 mb-0.5">{t({ EN: "Mainland China", CN: "中国大陆" })}</p>
                 <a
                   href="tel:+8618811633601"
-                  className="text-lg font-medium text-gray-900 hover:text-[#0066CC] transition-colors whitespace-nowrap"
+                  className="text-base font-medium text-gray-900 hover:text-[#0066CC] transition-colors whitespace-nowrap"
                 >
                   +86 188 1163 3601
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-white rounded-xl px-8 py-6 shadow-sm min-w-[250px]">
-              <Phone className="w-8 h-8 text-[#0066CC] flex-shrink-0" />
+            <div className="flex items-center gap-3 bg-white rounded-xl px-6 py-5 shadow-sm">
+              <Phone className="w-7 h-7 text-[#0066CC] flex-shrink-0" />
               <div>
-                <p className="text-sm text-gray-500 mb-1">{t({ EN: "Hong Kong", CN: "中国香港" })}</p>
+                <p className="text-xs text-gray-500 mb-0.5">{t({ EN: "Hong Kong", CN: "中国香港" })}</p>
                 <a
                   href="tel:+85267601338"
-                  className="text-lg font-medium text-gray-900 hover:text-[#0066CC] transition-colors whitespace-nowrap"
+                  className="text-base font-medium text-gray-900 hover:text-[#0066CC] transition-colors whitespace-nowrap"
                 >
                   +852 6760 1338
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-white rounded-xl p-6 shadow-sm">
-              <Mail className="w-8 h-8 text-[#0066CC] flex-shrink-0" />
+            <div className="flex items-center gap-3 bg-white rounded-xl px-6 py-5 shadow-sm">
+              <Mail className="w-7 h-7 text-[#0066CC] flex-shrink-0" />
               <div>
-                <p className="text-sm text-gray-500 mb-1">{t({ EN: "Email", CN: "邮箱" })}</p>
+                <p className="text-xs text-gray-500 mb-0.5">{t({ EN: "Email", CN: "邮箱" })}</p>
                 <a
                   href="mailto:ericguo@atitans.com"
-                  className="text-lg font-medium text-gray-900 hover:text-[#0066CC] transition-colors"
+                  className="text-base font-medium text-gray-900 hover:text-[#0066CC] transition-colors whitespace-nowrap"
                 >
                   ericguo@atitans.com
                 </a>
