@@ -85,7 +85,7 @@ export default function ContactPage() {
                 <p className="text-sm text-gray-500 mb-1">{t({ EN: "Mainland China", CN: "中国大陆" })}</p>
                 <a
                   href="tel:+8618811633601"
-                  className="text-lg font-medium text-gray-900 hover:text-[#0066CC] transition-colors"
+                  className="text-lg font-medium text-gray-900 hover:text-[#0066CC] transition-colors whitespace-nowrap"
                 >
                   +86 188 1163 3601
                 </a>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                 <p className="text-sm text-gray-500 mb-1">{t({ EN: "Hong Kong", CN: "中国香港" })}</p>
                 <a
                   href="tel:+85267601338"
-                  className="text-lg font-medium text-gray-900 hover:text-[#0066CC] transition-colors"
+                  className="text-lg font-medium text-gray-900 hover:text-[#0066CC] transition-colors whitespace-nowrap"
                 >
                   +852 6760 1338
                 </a>
