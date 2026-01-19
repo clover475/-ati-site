@@ -29,69 +29,63 @@ export function Footer() {
 
           {/* Right Column - Navigation and Contact */}
           <div className="space-y-4">
-            <nav className="text-sm">
-              <Link href="/" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">
+            {/* Navigation - wrap on mobile */}
+            <nav className="flex flex-wrap gap-x-3 gap-y-2 text-sm">
+              <Link href="/" className="text-gray-300 hover:text-white transition-colors">
                 {t({ EN: "Home", CN: "首页" })}
               </Link>
-              <span className="mx-2 text-gray-500">·</span>
-              <Link href="/industries" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">
+              <span className="text-gray-500 hidden sm:inline">·</span>
+              <Link href="/industries" className="text-gray-300 hover:text-white transition-colors">
                 {t({ EN: "Industries", CN: "行业" })}
               </Link>
-              <span className="mx-2 text-gray-500">·</span>
-              <Link
-                href="/consulting-technology"
-                className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
-              >
-                {t({ EN: "Consulting & Technology", CN: "咨询与技术" })}
+              <span className="text-gray-500 hidden sm:inline">·</span>
+              <Link href="/consulting-technology" className="text-gray-300 hover:text-white transition-colors">
+                {t({ EN: "Consulting", CN: "咨询" })}
               </Link>
-              <span className="mx-2 text-gray-500">·</span>
-              <Link
-                href="/enterprise-ai"
-                className="text-gray-300 hover:text-white transition-colors whitespace-nowrap"
-              >
+              <span className="text-gray-500 hidden sm:inline">·</span>
+              <Link href="/enterprise-ai" className="text-gray-300 hover:text-white transition-colors">
                 {t({ EN: "AI Agent", CN: "AI智能体" })}
               </Link>
-              <span className="mx-2 text-gray-500">·</span>
-              <Link href="/about" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">
-                {t({ EN: "About Us", CN: "关于我们" })}
+              <span className="text-gray-500 hidden sm:inline">·</span>
+              <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                {t({ EN: "About", CN: "关于" })}
               </Link>
-              <span className="mx-2 text-gray-500">·</span>
-              <Link href="/contact" className="text-gray-300 hover:text-white transition-colors whitespace-nowrap">
-                {t({ EN: "Contact Us", CN: "联系我们" })}
+              <span className="text-gray-500 hidden sm:inline">·</span>
+              <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                {t({ EN: "Contact", CN: "联系" })}
               </Link>
             </nav>
 
-            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300">
+            {/* Contact Info - stack on mobile */}
+            <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-3 text-sm text-gray-300">
               <div className="flex items-center gap-1.5">
                 <span>📞</span>
-                <span>+86 188 1163 3601</span>
+                <span className="text-xs sm:text-sm">+86 188 1163 3601</span>
               </div>
-              <span className="text-gray-500">·</span>
               <div className="flex items-center gap-1.5">
                 <span>📞</span>
-                <span>+852 6760 1338</span>
+                <span className="text-xs sm:text-sm">+852 6760 1338</span>
               </div>
-              <span className="text-gray-500">·</span>
               <div className="flex items-center gap-1.5">
                 <span>✉️</span>
-                <a href="mailto:ericguo@atitans.com" className="hover:text-white transition-colors">
+                <a href="mailto:ericguo@atitans.com" className="hover:text-white transition-colors text-xs sm:text-sm">
                   ericguo@atitans.com
                 </a>
               </div>
-              <span className="text-gray-500">·</span>
               <div
                 className="relative flex items-center gap-1.5 cursor-pointer"
                 onMouseEnter={() => setShowWeChatQR(true)}
                 onMouseLeave={() => setShowWeChatQR(false)}
+                onClick={() => setShowWeChatQR(!showWeChatQR)}
               >
                 <span>💬</span>
                 <span className="hover:text-white transition-colors">WeChat</span>
                 {showWeChatQR && (
                   <div 
-                    className="fixed z-[9999]"
+                    className="fixed z-[9999] left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0"
                     style={{
                       bottom: '100px',
-                      right: '50px',
+                      right: 'auto',
                       backgroundColor: 'white',
                       borderRadius: '16px',
                       padding: '12px',
@@ -101,7 +95,7 @@ export function Footer() {
                     <img
                       src="/wechat-qr.png"
                       alt="WeChat QR Code"
-                      style={{ width: '260px', height: 'auto', display: 'block' }}
+                      className="w-48 sm:w-64 h-auto block"
                     />
                   </div>
                 )}
